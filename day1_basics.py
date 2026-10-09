@@ -14,10 +14,10 @@ df = pd.DataFrame(data)
 print(df.dtypes)
 
 ## Data Manipulation
-print(df[df["City"] == "Delhi"])
+print(df[df["City"] == "Mumbai"])
 ## Data Transformation
 df["Total_Price"] = df["Quantity"] * df["Price"]
 ## Data Selection
 print(df.groupby("Product")["Total_Price"].sum())
-print(df.sort_values(by = "Total_Price", ascending = False))
+print(df.sort_values(by = "Total_Price", ascending = True))
 
