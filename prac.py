@@ -16,7 +16,7 @@ print(df.head(4))
 
 print(df[["Employee","Assessment_Score"]])
 
-print(df.loc[df["Department"] == "IT", "Employee"])
+print(df["Employee"].loc[df["Department"] == "IT"])
 
 print(df.loc[df["Assessment_Score"] > 80 , "Employee"])
 
