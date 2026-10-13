@@ -1,0 +1,63 @@
+[
+    {
+        "device_id":"D301",
+        "device_type":"Thermostat",
+        "room":"Living Room",
+        "status":"Active",
+        "alerts":[
+            "High usage"
+        ],
+        "metrics.temperature":24.0,
+        "metrics.battery":82,
+        "metrics.air_quality_index":null,
+        "health_rule":"Good battery"
+    },
+    {
+        "device_id":"D302",
+        "device_type":"Camera",
+        "room":"Entrance",
+        "status":"Active",
+        "alerts":null,
+        "metrics.temperature":null,
+        "metrics.battery":65,
+        "metrics.air_quality_index":null,
+        "health_rule":"Moderate battery"
+    },
+    {
+        "device_id":"D303",
+        "device_type":"Air Quality Sensor",
+        "room":"Bedroom",
+        "status":"Inactive",
+        "alerts":[
+            "Battery low"
+        ],
+        "metrics.temperature":null,
+        "metrics.battery":40,
+        "metrics.air_quality_index":78.0,
+        "health_rule":"Low battery"
+    },
+    {
+        "device_id":"D304",
+        "device_type":"Thermostat",
+        "room":"Study",
+        "status":"Active",
+        "alerts":null,
+        "metrics.temperature":27.0,
+        "metrics.battery":74,
+        "metrics.air_quality_index":null,
+        "health_rule":"Good battery"
+    },
+    {
+        "device_id":"D305",
+        "device_type":"Smart Lock",
+        "room":"Back Door",
+        "status":"Active",
+        "alerts":[
+            "Firmware update available"
+        ],
+        "metrics.temperature":null,
+        "metrics.battery":55,
+        "metrics.air_quality_index":null,
+        "health_rule":"Moderate battery"
+    }
+]
