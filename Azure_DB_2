@@ -1,0 +1,100 @@
+Section A – Basic Select  
+ 
+1. Display all documents in the container. 
+SELECT * FROM c 
+ 
+2. Display only guest_name , city , and hotel_name . 
+ 
+ SELECT c.guest_name, c.city, c.hotel_name from c 
+ 
+3. Display guest_name , room_type , nights , and booking_amount 
+ 
+SELECT c.guest_name, c.room_type, c.nights, c.booking_amount from c 
+ 
+4. Display id , guest_name , and booking_status . 
+ 
+SELECT c.id, c.guest_name, c.booking_status from c 
+ 
+ 
+ 
+Section B — WHERE Filters 
+  
+5. Display all bookings from Hyderabad. 
+ 
+SELECT * from c  
+where c.city = "Hyderabad" 
+ 
+6. Display all bookings from Mumbai. 
+SELECT * from c  
+where c.city = "Mumbai" 
+ 
+7. Display all bookings with status Completed . 
+SELECT * from c  
+where c.booking_status = "Confirmed" 
+ 
+8. Display all Suite bookings. 
+ 
+SELECT * from c where c.room_type = "Suite" 
+ 
+9. Display all bookings with room type Executive . 
+ 
+ SELECT * from c where c.room_type = "Executive" 
+ 
+ 
+Section C — Numeric Filters 
+  
+10. Display bookings where booking_amount is greater than 20000 . 
+select * from c where c.booking_amount > 20000 
+ 
+11. Display bookings where room_rate is greater than 6000 . 
+ 
+select * from c where c.room_rate > 20000 
+ 
+12. Display bookings where nights is greater than 3 . 
+ 
+select * from c where c.nights > 3 
+ 
+13. Display bookings where rating is below 4.2 . 
+ 
+select * from c where c.rating > 20000 
+ 
+14. Display bookings where booking_amount is between 8000 and 25000 . 
+ 
+select * from c where c.booking_amount between 8000 and 25000 
+ 
+15. Display bookings where room_rate is below 4000 . 
+ 
+select * from c where c.room_rate > 4000 
+ 
+Section D — AND Conditions 
+  
+16. Display bookings that are Confirmed and have a booking amount greater than 
+15000 . 
+select * from c where c.booking_amount > 15000 and c.booking_status = "Completed" 
+ 
+17. Display Mumbai bookings where the room type is Suite . 
+ 
+ select * from c where c.city = "Mumbai" and c.room_type = "Suite" 
+ 
+18. Display bookings where nights > 2 and rating > 4.5 . 
+ 
+ select * from c where c.nights > 2 and c.rating > 4.5 
+ 
+19. Display Completed bookings where booking_amount > 10000 . 
+   
+select * from c where c.booking_status = "Completed" and c.booking_amount > 10000 
+ 
+ 
+20. Display Standard rooms where room_rate < 3500 . 
+select * from c where c.room_type = "Standard" and c.room_rate < 3500 
+Section E — OR Conditions 
+21. Display bookings from Hyderabad or Bengaluru. 
+select * from c where c.city = "Hyderabad" or c.city = "Bengaluru" 
+22. Display bookings from Mumbai or Delhi. 
+select * from c where c.city = "Mumbai" or c.city = "Delhi" 
+23. Display bookings where room type is Suite or Executive . 
+select * from c where c.roomtype = "Suite" or c.room_type = "Executive" 
+24. Display bookings whose status is Completed or Confirmed . 
+select * from c where c.booking_status = "Completed" or c.booking_status= "Confirmed" 
+25. Display bookings from Chennai, Pune, or Kochi. 
+select * from c where c.city = “Chennai” or c.city = “Pune” or c.city = “Kochi”
