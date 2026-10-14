@@ -1,0 +1,119 @@
+Section G  -  Count --> Count the total number of charging stations. 
+select count(c.station_name) as total_charging_stations from c 
+ --> Count the number of Active stations. 
+select count(c.station_name) as total_active_charging_stations from c 
+where c.status = "Active" 
+ --> Count the number of Fast stations. 
+ 
+select count(c.station_name) as total_fast_charging_stations from c 
+where c.station_type = "Fast" 
+ --> Count the number of stations in Pune. 
+ 
+select count(c.station_name) as total_stations_pune from c 
+where c.city = "Pune" 
+ 
+ --> Count the number of stations whose revenue is greater than 15000 
+ 
+select count(c.station_name) as total_stations from c 
+where c.revenue > 15000 
+ 
+ 
+Section H — GROUP BY 
+ --> Count the number of stations in each city. 
+ 
+select c.city, count(c.station_name) as total_stations_per_city from c 
+group by c.city 
+ --> Count the number of stations by station_type 
+ 
+select c.station_type, count(c.station_name) as total_stations_per_type from c 
+group by c.station_type 
+ --> Count the number of stations by status 
+ 
+select c.status, count(c.station_name) as total_stations_per_status from c 
+group by c.status 
+ --> Find the total revenue for each city. 
+ 
+select c.city, SUM(c.revenue) as total_revenue_per_city from c 
+group by c.city 
+ 
+ --> Find the average revenue for each station type. 
+   
+ 
+   
+ 
+select c.station_type, avg(c.revenue) as total_revenue_per_station_type from c 
+group by c.station_type 
+ 
+ 
+ --> Find the average uptime percentage for each city. 
+ 
+select c.city, avg(c.uptime_percent) as total_revenue_per_station_type from c 
+group by c.city 
+ 
+ -->  Find the total number of daily sessions for each city. 
+ 
+select c.city, sum(c.daily_sessions) as total_session_city from c 
+group by c.city 
+ --> Find the average charging capacity for each station type.  
+ 
+select c.station_type, avg(c.capacity_kw) as total_session_city from c 
+group by c.station_type 
+ 
+ 
+Section I — GROUP BY with Filters 
+ --> Find total revenue by city using only Active stations. 
+ 
+select c.city, sum(c.revenue) as total_revenue from c 
+where c.status = "Active" 
+group by c.city 
+ 
+ --> Count Fast stations in each city. 
+select c.city, count(c.station_type) as no_of_station_type_fast from c 
+where c.station_type = "Fast" 
+group by c.city 
+ 
+ -->  Find average revenue by city for stations whose revenue is above 8000  
+ 
+select c.city,c.station_name, avg(c.revenue) as avg_revenue_by_city_for_stations from c 
+where c.revenue > 8000 
+group by c.city,c.station_name 
+ --> Find total daily sessions grouped by station type 
+ 
+select c.station_type,COUNT(c.daily_sessions) as 
+ total_daily_sessions_grouped_by_station_type from c 
+group by c.station_type 
+ 
+ 
+   
+ 
+   
+ 
+Section J — Combined Queries 
+ --> Find the top five stations based on revenue. 
+ 
+ 
+SELECT TOP 5 
+    c.station_name, 
+    SUM(c.revenue) AS total_revenue 
+FROM c 
+GROUP BY c.station_name 
+ORDER BY SUM(c.revenue) DESC 
+ 
+ 
+ -->   Find the top three stations based on daily sessions. 
+ 
+SELECT TOP 3 
+    c.station_name, 
+    c.daily_sessions 
+FROM c 
+ORDER BY c.daily_sessions DESC 
+ --> Display Active Fast stations ordered by revenue from highest to lowest. 
+ 
+ 
+SELECT  
+    c.station_name, 
+    SUM(c.revenue) AS revenue_station_active 
+FROM c 
+WHERE c.status = "Active" 
+GROUP BY c.station_name 
+ORDER BY SUM(c.revenue) DESC 
