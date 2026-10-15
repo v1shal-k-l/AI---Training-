@@ -1,5 +1,5 @@
 import json
-with open("smart_home_devices.json","r") as file:
+with open("smart_home_devices.json", "r") as file:
     df = json.load(file)
 
 print(df)

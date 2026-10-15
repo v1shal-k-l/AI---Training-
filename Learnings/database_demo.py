@@ -1,5 +1,5 @@
 import sqlite3
-connection = sqlite3.connect("cinema.db")
+connection = sqlite3.connect("../Semi-Structured/cinema.db")
 
 cursor = connection.cursor()
 cursor.execute("""Create table if not exists bookings(

@@ -8,7 +8,7 @@ print(df.shape)
 print(df[["Station", "Minutes"]])
 
 import json
-with open("support_tickets.json") as json_file:
+with open("../Semi-Structured/support_tickets.json") as json_file:
     tickets = json.load(json_file)
 print(tickets)
 
@@ -22,7 +22,7 @@ df = pd.json_normalize(tickets)
 print(df)
 
 
-with open("incident_notes.txt") as file:
+with open("../Unstructured_Data/incident_notes.txt") as file:
     text = file.read()
 
 words = text.split()
