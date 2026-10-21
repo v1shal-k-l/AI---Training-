@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Rhea Kapoor",
+        "course": "Python",
+        "score": 82
+    },
+    {
+        "id": 2,
+        "name": "Zain Malik",
+        "course": "SQL",
+        "score": 76
+    },
+    {
+        "id": 3,
+        "name": "Devika Rao",
+        "course": "Cloud",
+        "score": 91
+    },
+    {
+        "id": 4,
+        "name": "Kabir Sen",
+        "course": "Docker",
+        "score": 93
+    }
+]
