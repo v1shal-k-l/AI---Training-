@@ -19,7 +19,7 @@ app.add_middleware(
 )
 
 
-# Product model
+
 class Product(BaseModel):
     id: int
     name: str
@@ -27,7 +27,6 @@ class Product(BaseModel):
     image: str
 
 
-# In-memory product data
 products = [
     {
         "id": 1,
@@ -50,7 +49,6 @@ products = [
 ]
 
 
-# Home endpoint
 @app.get("/")
 def home():
     return {
@@ -58,7 +56,7 @@ def home():
     }
 
 
-# GET all products
+
 @app.get("/products")
 def get_products():
     return products
@@ -97,7 +95,6 @@ def add_product(product: Product):
     }
 
 
-# PUT - Update product
 @app.put("/products/{product_id}")
 def update_product(
     product_id: int,
@@ -120,8 +117,6 @@ def update_product(
         detail="Product not found"
     )
 
-
-# DELETE - Delete product
 @app.delete("/products/{product_id}")
 def delete_product(product_id: int):
 
