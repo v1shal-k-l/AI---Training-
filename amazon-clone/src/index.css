@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #eaeded;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+  background-color: #131921;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.logo::after {
+  content: ".in";
+  font-size: 14px;
+  color: orange;
+}
+
+.navbar-search {
+  width: 55%;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 15px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-right a {
+  text-decoration: none;
+  color: white;
+  margin-left: 25px;
+  font-weight: 600;
+}
+
+.cart-link {
+  position: relative;
+}
+
+.cart-badge {
+  background: orange;
+  color: black;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  position: absolute;
+  top: -10px;
+  right: -12px;
+}
+
+/* ==========================
+   SUB NAVBAR
+========================== */
+
+.sub-navbar {
+  background: #232f3e;
+  color: white;
+  padding: 10px 25px;
+}
+
+.sub-navbar span {
+  margin-right: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sub-navbar span:hover {
+  text-decoration: underline;
+}
+
+/* ==========================
+   HERO BANNER
+========================== */
+
+.hero-banner {
+width: 100%;
+padding: 10px;
+}
+
+.hero-banner img {
+
+width: 100% ;
+height: 120px ;
+
+max-height: 120px ;
+
+object-fit: cover ;
+
+border-radius: 10px;
+
+border: 3px solid red;
+
+}
+
+/* ==========================
+   SEARCH
+========================== */
+
+.search-container {
+  padding: 15px 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+/* ==========================
+   PRODUCTS
+========================== */
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.product-card h3 {
+  margin-top: 10px;
+  font-size: 17px;
+  min-height: 45px;
+}
+
+.product-card p {
+  color: #b12704;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* ==========================
+   BUTTONS
+========================== */
+
+.btn {
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #f7ca00;
+}
+
+/* ==========================
+   CART
+========================== */
+
+.cart-container {
+  padding: 30px;
+}
+
+.cart-container h1 {
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  background: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.cart-total {
+  margin: 20px 0;
+  color: #b12704;
+}
+
+/* ==========================
+   LOGIN PAGE
+========================== */
+
+.login-container,
+.payment-container {
+  width: 400px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2,
+.payment-container h2 {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* ==========================
+   SUCCESS PAGE
+========================== */
+
+.success-container {
+  text-align: center;
+  margin-top: 120px;
+}
+
+.success-container h1 {
+  color: green;
+  margin-bottom: 15px;
+}
+
+/* ==========================
+   404 PAGE
+========================== */
+
+.notfound-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.notfound-container h1 {
+  font-size: 100px;
+  color: #ff9900;
+}
+
+.notfound-container h2 {
+  margin-bottom: 15px;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .navbar-search {
+    width: 100%;
+  }
+
+  .hero-banner img {
+    height: 110px;
+  }
+
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+
+  .login-container,
+  .payment-container {
+    width: 90%;
+  }
+
+  .product-card img {
+    width: 150px;
+    height: 150px;
+  }
+}
