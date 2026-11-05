@@ -22,3 +22,5 @@ chroma_db/
 # OS Files
 .DS_Store
 Thumbs.db
+
+Models/
