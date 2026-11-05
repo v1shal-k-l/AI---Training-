@@ -1,0 +1,26 @@
+[
+  {
+    "id": "W101",
+    "title": "Python Fundamentals",
+    "duration_days": 3,
+    "fee_per_person_inr": 3000
+  },
+  {
+    "id": "W102",
+    "title": "Azure Fundamentals",
+    "duration_days": 2,
+    "fee_per_person_inr": 4000
+  },
+  {
+    "id": "W103",
+    "title": "Data Science Bootcamp",
+    "duration_days": 5,
+    "fee_per_person_inr": 6000
+  },
+  {
+    "id": "W104",
+    "title": "AI for Beginners",
+    "duration_days": 4,
+    "fee_per_person_inr": 5000
+  }
+]
