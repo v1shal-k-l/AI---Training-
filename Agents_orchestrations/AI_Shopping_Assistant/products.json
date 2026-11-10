@@ -1,0 +1,26 @@
+[
+  {
+    "id": "P101",
+    "name": "Dell Inspiron 15",
+    "category": "Laptop",
+    "price_inr": 55000,
+    "stock": 15,
+    "rating": 4.5
+  },
+  {
+    "id": "P102",
+    "name": "HP Pavilion 14",
+    "category": "Laptop",
+    "price_inr": 60000,
+    "stock": 8,
+    "rating": 4.7
+  },
+  {
+    "id": "P103",
+    "name": "Lenovo Ideapad",
+    "category": "Laptop",
+    "price_inr": 50000,
+    "stock": 12,
+    "rating": 4.4
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "R101",
+    "name": "Spice Garden",
+    "cuisine": "Indian",
+    "location": "Hyderabad",
+    "price_per_person": 800,
+    "available_seats": 20
+  },
+  {
+    "id": "R102",
+    "name": "Pasta Palace",
+    "cuisine": "Italian",
+    "location": "Bangalore",
+    "price_per_person": 1200,
+    "available_seats": 15
+  },
+  {
+    "id": "R103",
+    "name": "Dragon Wok",
+    "cuisine": "Chinese",
+    "location": "Pune",
+    "price_per_person": 950,
+    "available_seats": 18
+  },
+  {
+    "id": "R104",
+    "name": "Tokyo Bowl",
+    "cuisine": "Japanese",
+    "location": "Mumbai",
+    "price_per_person": 1500,
+    "available_seats": 12
+  },
+  {
+    "id": "R105",
+    "name": "Burger Junction",
+    "cuisine": "American",
+    "location": "Delhi",
+    "price_per_person": 700,
+    "available_seats": 25
+  }
+]
