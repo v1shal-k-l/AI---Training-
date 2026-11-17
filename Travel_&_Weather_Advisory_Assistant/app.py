@@ -22,9 +22,6 @@ from guardrails import (
     validate_weather_response
 )
 
-# ===================================
-# Load Environment
-# ===================================
 
 load_dotenv()
 
@@ -32,19 +29,12 @@ app = FastAPI(
     title="Travel Weather Advisor"
 )
 
-# ===================================
-# Redis
-# ===================================
-
 redis_client = redis.Redis(
     host=os.getenv("REDIS_HOST"),
     port=int(os.getenv("REDIS_PORT")),
     decode_responses=True
 )
 
-# ===================================
-# OpenRouter
-# ===================================
 
 llm = ChatOpenAI(
     model=os.getenv("OPENROUTER_MODEL"),
@@ -52,9 +42,6 @@ llm = ChatOpenAI(
     base_url="https://openrouter.ai/api/v1",
     temperature=0.3
 )
-# ===================================
-# Database Connection
-# ===================================
 
 def get_connection():
 
@@ -66,9 +53,6 @@ def get_connection():
         password=os.getenv("DB_PASSWORD")
     )
 
-# ===================================
-# Request Models
-# ===================================
 
 class TripRequest(BaseModel):
 
@@ -86,9 +70,6 @@ class ChatRequest(BaseModel):
     trip_id: int | None = None
 
 
-# ===================================
-# Create Trip
-# ===================================
 
 @app.post("/trips")
 def create_trip(request: TripRequest):
@@ -149,10 +130,6 @@ def create_trip(request: TripRequest):
     }
 
 
-# ===================================
-# Retrieve Trip
-# ===================================
-
 @app.get("/trips/{trip_id}")
 def retrieve_trip(trip_id: int):
 
@@ -191,9 +168,6 @@ def retrieve_trip(trip_id: int):
         "status": row[6]
     }
 
-# ===================================
-# Chat Assistant
-# ===================================
 @app.post(
     "/chat",
     response_class=PlainTextResponse
@@ -347,11 +321,6 @@ def ask_assistant(request: ChatRequest):
     )
 
     return response.content
-
-# ===================================
-# Health Check
-# ===================================
-
 
 @app.get("/")
 def home():
