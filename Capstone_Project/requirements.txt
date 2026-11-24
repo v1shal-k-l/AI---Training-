@@ -3,3 +3,7 @@ uvicorn[standard]
 psycopg2-binary
 python-dotenv
 pydantic
+mlflow>=3.18
+langchain>=1.5
+langchain-openai>=1.8
+openai

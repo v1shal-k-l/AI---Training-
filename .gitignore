@@ -24,3 +24,6 @@ chroma_db/
 Thumbs.db
 
 Models/
+# MLflow local tracking data
+mlflow.db
+mlruns/

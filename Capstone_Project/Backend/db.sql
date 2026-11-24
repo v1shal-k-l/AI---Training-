@@ -119,6 +119,10 @@ CREATE TABLE ai_runs (
 
     generated_summary TEXT,
 
+    -- MLflow trace of this run (NULL for old/seeded runs).
+    -- Existing database:  ALTER TABLE ai_runs ADD COLUMN IF NOT EXISTS mlflow_trace_id VARCHAR(64);
+    mlflow_trace_id VARCHAR(64),
+
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
