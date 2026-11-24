@@ -1,0 +1,39 @@
+{
+  "run_id": 1,
+  "trace_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "model_id": "gemini-2.0-flash",
+  "status": "SUCCESS",
+  "latency_ms": 1200,
+  "stages": [
+    {
+      "event_id": 1,
+      "span_name": "api_request_received",
+      "duration_ms": 5,
+      "status": "SUCCESS"
+    },
+    {
+      "event_id": 2,
+      "span_name": "db_portfolio_read",
+      "duration_ms": 45,
+      "status": "SUCCESS"
+    },
+    {
+      "event_id": 3,
+      "span_name": "allocation_calculation",
+      "duration_ms": 12,
+      "status": "SUCCESS"
+    },
+    {
+      "event_id": 4,
+      "span_name": "llm_inference",
+      "duration_ms": 1100,
+      "status": "SUCCESS"
+    },
+    {
+      "event_id": 5,
+      "span_name": "output_validation",
+      "duration_ms": 38,
+      "status": "SUCCESS"
+    }
+  ]
+}

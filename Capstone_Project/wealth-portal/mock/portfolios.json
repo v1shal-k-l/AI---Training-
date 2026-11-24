@@ -1,0 +1,18 @@
+[
+  {
+    "portfolio_id": 1,
+    "owner_code": "ANALYST-01",
+    "portfolio_name": "Growth Equity Fund",
+    "investment_style": "Aggressive",
+    "base_currency": "USD",
+    "created_at": "2026-01-15T10:00:00"
+  },
+  {
+    "portfolio_id": 2,
+    "owner_code": "ANALYST-02",
+    "portfolio_name": "Conservative Income",
+    "investment_style": "Conservative",
+    "base_currency": "USD",
+    "created_at": "2026-03-22T10:00:00"
+  }
+]

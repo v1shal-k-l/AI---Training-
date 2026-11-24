@@ -1,0 +1,22 @@
+[
+  {
+    "portfolio_id": 1,
+    "total_value": 148255.00,
+    "holdings": [
+      {"holding_id": 1, "asset_id": 1, "symbol": "AAPL", "asset_name": "Apple Inc.", "asset_class": "Equity", "sector": "Technology", "units": 50, "synthetic_reference_price": 189.50, "value": 9475.00, "weight_pct": 6.4},
+      {"holding_id": 2, "asset_id": 2, "symbol": "MSFT", "asset_name": "Microsoft Corp.", "asset_class": "Equity", "sector": "Technology", "units": 30, "synthetic_reference_price": 378.90, "value": 11367.00, "weight_pct": 7.7},
+      {"holding_id": 3, "asset_id": 3, "symbol": "GOOGL", "asset_name": "Alphabet Inc.", "asset_class": "Equity", "sector": "Technology", "units": 80, "synthetic_reference_price": 141.25, "value": 11300.00, "weight_pct": 7.6},
+      {"holding_id": 4, "asset_id": 9, "symbol": "BTC-SYN", "asset_name": "Synthetic Bitcoin", "asset_class": "Crypto", "sector": "Digital Assets", "units": 2, "synthetic_reference_price": 62340.00, "value": 124680.00, "weight_pct": 84.1}
+    ]
+  },
+  {
+    "portfolio_id": 2,
+    "total_value": 50000.00,
+    "holdings": [
+      {"holding_id": 5, "asset_id": 5, "symbol": "BND", "asset_name": "Vanguard Total Bond ETF", "asset_class": "Fixed Income", "sector": "Bonds", "units": 300, "synthetic_reference_price": 72.40, "value": 21720.00, "weight_pct": 43.4},
+      {"holding_id": 6, "asset_id": 6, "symbol": "TLT", "asset_name": "iShares 20+ Yr Treasury", "asset_class": "Fixed Income", "sector": "Bonds", "units": 150, "synthetic_reference_price": 92.15, "value": 13822.50, "weight_pct": 27.6},
+      {"holding_id": 7, "asset_id": 7, "symbol": "GLD", "asset_name": "SPDR Gold Shares", "asset_class": "Commodity", "sector": "Precious Metals", "units": 30, "synthetic_reference_price": 198.30, "value": 5949.00, "weight_pct": 11.9},
+      {"holding_id": 8, "asset_id": 10, "symbol": "CASH", "asset_name": "Cash Reserve", "asset_class": "Cash", "sector": "Cash", "units": 8508.50, "synthetic_reference_price": 1.00, "value": 8508.50, "weight_pct": 17.0}
+    ]
+  }
+]
