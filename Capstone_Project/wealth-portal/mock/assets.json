@@ -1,0 +1,12 @@
+[
+  {"asset_id": 1, "symbol": "AAPL", "asset_name": "Apple Inc.", "asset_class": "Equity", "synthetic_reference_price": 189.50},
+  {"asset_id": 2, "symbol": "MSFT", "asset_name": "Microsoft Corp.", "asset_class": "Equity", "synthetic_reference_price": 378.90},
+  {"asset_id": 3, "symbol": "GOOGL", "asset_name": "Alphabet Inc.", "asset_class": "Equity", "synthetic_reference_price": 141.25},
+  {"asset_id": 4, "symbol": "AMZN", "asset_name": "Amazon.com Inc.", "asset_class": "Equity", "synthetic_reference_price": 178.60},
+  {"asset_id": 5, "symbol": "BND", "asset_name": "Vanguard Total Bond ETF", "asset_class": "Fixed Income", "synthetic_reference_price": 72.40},
+  {"asset_id": 6, "symbol": "TLT", "asset_name": "iShares 20+ Yr Treasury", "asset_class": "Fixed Income", "synthetic_reference_price": 92.15},
+  {"asset_id": 7, "symbol": "GLD", "asset_name": "SPDR Gold Shares", "asset_class": "Commodity", "synthetic_reference_price": 198.30},
+  {"asset_id": 8, "symbol": "VNQ", "asset_name": "Vanguard Real Estate ETF", "asset_class": "Real Estate", "synthetic_reference_price": 83.70},
+  {"asset_id": 9, "symbol": "BTC-SYN", "asset_name": "Synthetic Bitcoin Token", "asset_class": "Crypto", "synthetic_reference_price": 62340.00},
+  {"asset_id": 10, "symbol": "CASH", "asset_name": "Cash Reserve", "asset_class": "Cash", "synthetic_reference_price": 1.00}
+]

@@ -1,0 +1,7 @@
+{
+  "total_runs": 15,
+  "successes": 11,
+  "failures": 4,
+  "error_rate": 26.7,
+  "p95_latency_ms": 5200
+}

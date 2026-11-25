@@ -1,0 +1,8 @@
+[
+  {"txn_id": 1, "portfolio_id": 1, "asset_id": 1, "symbol": "AAPL", "txn_type": "BUY", "units": 30, "unit_price": 175.20, "transaction_value": 5256.00, "occurred_at": "2026-02-10T10:00:00"},
+  {"txn_id": 2, "portfolio_id": 1, "asset_id": 2, "symbol": "MSFT", "txn_type": "BUY", "units": 20, "unit_price": 365.00, "transaction_value": 7300.00, "occurred_at": "2026-02-15T10:00:00"},
+  {"txn_id": 3, "portfolio_id": 1, "asset_id": 3, "symbol": "GOOGL", "txn_type": "BUY", "units": 100, "unit_price": 138.50, "transaction_value": 13850.00, "occurred_at": "2026-03-01T10:00:00"},
+  {"txn_id": 4, "portfolio_id": 1, "asset_id": 1, "symbol": "AAPL", "txn_type": "BUY", "units": 20, "unit_price": 182.30, "transaction_value": 3646.00, "occurred_at": "2026-04-05T10:00:00"},
+  {"txn_id": 5, "portfolio_id": 1, "asset_id": 3, "symbol": "GOOGL", "txn_type": "SELL", "units": 20, "unit_price": 145.00, "transaction_value": 2900.00, "occurred_at": "2026-06-10T10:00:00"},
+  {"txn_id": 6, "portfolio_id": 1, "asset_id": 9, "symbol": "BTC-SYN", "txn_type": "BUY", "units": 2, "unit_price": 62340.00, "transaction_value": 124680.00, "occurred_at": "2026-05-10T10:00:00"}
+]

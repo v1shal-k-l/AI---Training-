@@ -1,0 +1,11 @@
+{
+  "run_id": 1,
+  "portfolio_id": 1,
+  "trace_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "model_id": "gemini-2.0-flash",
+  "status": "SUCCESS",
+  "latency_ms": 1200,
+  "token_usage": 450,
+  "generated_summary": "The Growth Equity Fund holds 4 assets valued at $148,255. The portfolio is heavily concentrated in cryptocurrency, with BTC-SYN representing 84.1% of total value. Equity holdings (AAPL, MSFT, GOOGL) collectively account for 21.7%. This concentration in a single volatile asset class represents a significant risk factor.",
+  "created_at": "2026-07-01T09:00:00"
+}
