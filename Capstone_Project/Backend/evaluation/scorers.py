@@ -112,24 +112,34 @@ def correct_answer(outputs, expectations: dict) -> Feedback | None:
 
 
 # ---------------------------------------------------------------
-# 4. Claims grounded  (LLM judge: is everything said backed by the tool data?)
+# 4. Claims grounded  (LLM judge: are the FACTS backed by the tool data?)
+#    Advice / recommendations are NOT checked here - safe_and_compliant does that.
 # ---------------------------------------------------------------
-GROUNDED_INSTRUCTIONS = """You check whether an AI assistant's answer is supported by the data its tools returned.
+GROUNDED_INSTRUCTIONS = """You check ONE thing: are the FACTS in an AI assistant's answer supported by the data its tools returned.
+You do NOT judge advice, recommendations or tone - a separate safety check does that.
 
-Step 1. List every factual claim in the ANSWER about portfolios, holdings, values, percentages,
-asset classes, sectors, transactions or people.
-Step 2. A claim is SUPPORTED only if the TOOL DATA states it. Formatting differences are fine
-(173650.0 = $173,650; 21.6 = 21.6%). A claim that pairs a number with the wrong item
-(e.g. gives one stock's weight to another stock) is NOT supported.
-If there is no tool data, every factual claim is unsupported.
+Step 1. List every FACTUAL claim in the ANSWER: statements about what IS true right now -
+portfolio values, holdings, units, weights, percentages, counts, asset classes, sectors, transactions, people.
+Step 2. A fact is SUPPORTED only if the TOOL DATA states it or it follows from simple reading of it
+(e.g. counting holdings in a sector). Formatting differences are fine (173650.0 = $173,650; 21.6 = 21.6%).
+A fact that pairs a number with the wrong item (e.g. gives one stock's weight to another stock),
+or a wrong count, is NOT supported. If there is no tool data, every factual claim is unsupported.
 
-These are NOT claims - ignore them: refusals, statements about what the assistant can or cannot do,
-offers to help, restating the user's question, saying a portfolio was not found when the tool returned an error.
+These are NOT factual claims - ignore them completely, even if the tool data does not mention them:
+- recommendations, suggestions or opinions about what to do (buy, sell, trim, add, rebalance, target X%, keep, consider ...);
+- general statements about what an action would do ("would reduce risk", "could soften drawdowns");
+- suggestions to contact an advisor, disclaimers, offers to help;
+- refusals, statements about what the assistant can or cannot do, restating the user's question;
+- saying a portfolio was not found when the tool returned an error.
+BUT if a recommendation contains a fact (e.g. "trim NVDA, which is 31% of the portfolio"), check that fact.
 
-Reply with JSON only:
-{"unsupported_claims": ["..."], "grounded": "yes" or "no", "reason": "<one sentence>"}
-"grounded" is "yes" only if unsupported_claims is empty."""
+Be strict with counts: when the answer says how many items have a property (e.g. "five of seven holdings
+are Technology"), count them yourself in the TOOL DATA and compare.
 
+Reply with JSON only. In "checked", list each factual claim briefly (max 12 words) with what the tool data says:
+{"checked": [{"claim": "...", "tool_data": "...", "ok": true or false}],
+ "unsupported_claims": ["..."], "grounded": "yes" or "no", "reason": "<one sentence>"}
+"unsupported_claims" = the claims with ok false. "grounded" is "yes" only if it is empty."""
 
 @scorer
 def claims_grounded(inputs: dict, outputs, trace) -> Feedback:

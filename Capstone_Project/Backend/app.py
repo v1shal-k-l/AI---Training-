@@ -9,13 +9,15 @@ from typing import Literal
 from dotenv import load_dotenv
 from psycopg2.extras import RealDictCursor
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException,BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 from ai import config as ai_config
 from ai.agent import InsightAgentError, mlflow_trace_url, run_insight_agent, tag_trace
 from ai.prompts import PROMPT_VERSION as INSIGHT_PROMPT_VERSION
+from ai.live_eval import run_live_eval
+
 
 load_dotenv()
 
@@ -389,7 +391,7 @@ def save_failed_run(cur, portfolio_id, error_type, latency_ms, mlflow_trace_id, 
 
 
 @app.post("/portfolios/{portfolio_id}/insights")
-def generate_insight(portfolio_id: int):
+def generate_insight(portfolio_id: int,background_tasks: BackgroundTasks):
     """
     Generates an insight AND records it:
       - one row in ai_runs   (the run itself → real run_id and trace_id)
@@ -523,7 +525,9 @@ def generate_insight(portfolio_id: int):
 
     # Lets you search the MLflow UI by our run id (tags.run_id = '42').
     tag_trace(ai["mlflow_trace_id"], run_id=run["run_id"])
-
+    background_tasks.add_task(
+        run_live_eval, ai["mlflow_trace_id"], portfolio_id, summary, latency_ms, ai["token_usage"]
+    )
     return {
         "run_id": run["run_id"],
         "trace_id": trace_id,
