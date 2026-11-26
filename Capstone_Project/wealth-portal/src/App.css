@@ -907,3 +907,58 @@ label {
 [data-theme="dark"] .recharts-pie-sector path {
   stroke: var(--surface);     /* slice separators match the card */
 }
+
+/* ---------- AI insight text (rendered Markdown) ---------- */
+/* Uses the theme variables, so it works in light AND dark mode. */
+.insight-markdown {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text);
+}
+.insight-markdown h1,
+.insight-markdown h2,
+.insight-markdown h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 20px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+.insight-markdown > :first-child {
+  margin-top: 0;
+}
+.insight-markdown p {
+  margin: 0 0 12px;
+}
+.insight-markdown ul,
+.insight-markdown ol {
+  margin: 0 0 12px;
+  padding-left: 20px;
+}
+.insight-markdown li {
+  margin-bottom: 10px;
+}
+.insight-markdown li::marker {
+  color: var(--accent);
+}
+/* "BUY / ADD", "TRIM", ... - shown as a small coloured label */
+.insight-markdown strong {
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+/* the disclaimer is the last paragraph */
+.insight-markdown > p:last-child {
+  margin: 18px 0 0;
+  padding: 10px 14px;
+  border-left: 3px solid #d69e2e;
+  border-radius: 0 6px 6px 0;
+  background: rgba(214, 158, 46, 0.12);
+  color: #975a16;
+  font-size: 13px;
+  font-style: italic;
+}
+[data-theme="dark"] .insight-markdown > p:last-child {
+  color: #f6e05e;
+}

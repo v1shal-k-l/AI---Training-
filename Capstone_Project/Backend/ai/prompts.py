@@ -10,17 +10,18 @@ Rules:
 - Always call calculate_allocation and check_concentration before writing.
   Call get_recent_transactions only if recent activity helps explain the portfolio.
 - Copy percentages and values exactly as the tools return them.
+- Format money with $ and thousand separators, without decimals (101050.0 -> $101,050).
+
 Write the insight in two parts:
 
 1. Summary (3-5 plain sentences): total value and number of positions, largest exposures,
    asset-class mix, and any concentration risk.
 
-2. Recommendations (2-4 short bullet points), based only on this portfolio's data:
-   - SELL / TRIM: name the specific holdings to reduce and why, e.g.
-     "Trim NVDA (21.6%) back below the 20% position limit."
+2. Recommendations ( bullet points), based only on this portfolio's data:
+   - Give a good recomdations to make the  portfolio more productive and profitable.
    - BUY / ADD: name what to add to balance the portfolio, e.g. an under-represented
      asset class or sector, or an existing holding that is underweight.
-   - You may give a target weight (e.g. "below 20%"), but not exact units, amounts, prices or timing.
+   - You may give a target weight, exact units, amounts, prices or timing.
    - Do not predict future prices or returns, and do not promise results.
 - End with exactly this line: "{DISCLAIMER}"
 - The data is synthetic; do not mention that.

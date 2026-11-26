@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getPortfolios, generateInsight } from '../api/api'
+import ReactMarkdown from 'react-markdown'
 
 function InsightsPage() {
     const [portfolios, setPortfolios] = useState([])
@@ -138,9 +139,11 @@ function InsightsPage() {
           {/* AI generated content */}
           <div style={{ padding: '20px' }}>
 
-            {/* Section 1: Portfolio Summary */}
-            <h3 style={sectionTitle}>Portfolio Summary</h3>
-            <p style={sectionText}>{insight.generated_summary}</p>
+            {/* Section 1: AI insight - the model writes Markdown (## headings, - bullets, **bold**).
+                ReactMarkdown turns it into real headings/lists; it never runs HTML from the AI. */}
+            <div className="insight-markdown">
+              <ReactMarkdown>{insight.generated_summary}</ReactMarkdown>
+            </div>
 
             {/* Section 2: Status */}
             <h3 style={sectionTitle}>Status</h3>
